@@ -524,3 +524,24 @@ nav a:hover::after {
   }
 }
 
+/* Fix expanded card di HP */
+@media (max-width: 768px) {
+  .panel {
+    position: static;   /* jangan absolute */
+    transform: none;
+    width: 100%;
+    margin-top: 10px;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .member {
+    width: 90%;
+    margin: auto;
+  }
+
+  .member img {
+    width: 100px;
+    height: 100px;
+  }
+}
