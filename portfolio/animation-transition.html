@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation & Transition - CSSpedia</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">CSSpedia</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../tutorial.html">Tutorial</a></li>
+        <!-- <li><a href="../index.html#playground">Playground</a></li> -->
+        
+      </ul>
+    </nav>
+  </header>
+
+  <section class="portfolio-page">
+  <h1>Animation & Transition</h1>
+  <p>
+    Transition digunakan untuk efek perubahan halus, sedangkan animation untuk membuat gerakan berulang.
+  </p>
+  <h2>Contoh Transition:</h2>
+  <pre>
+button {
+  background: blue;
+  color: white;
+  transition: background 0.3s;
+}
+button:hover {
+  background: darkblue;
+}
+  </pre>
+
+  <h2>Hasil Transition:</h2>
+  <button style="background:blue; color:white; padding:10px 20px; border:none; border-radius:10px; transition:background 0.3s;"
+    onmouseover="this.style.background='darkblue'"
+    onmouseout="this.style.background='blue'">Hover Me</button>
+
+  <h2>Contoh Animation:</h2>
+  <pre>
+@keyframes gerak {
+  from { transform: translateX(0); }
+  to { transform: translateX(100px); }
+}
+.box {
+  animation: gerak 2s infinite alternate;
+}
+  </pre>
+
+  <h2>Hasil Animation:</h2>
+  <div style="width:50px; height:50px; background:red; animation:gerak 2s infinite alternate; border-radius:10px;"></div>
+
+  <style>
+    @keyframes gerak {
+      from { transform: translateX(0); }
+      to { transform: translateX(100px); }
+    }
+  </style>
+</section>
+
+
+  <footer>
+    <p>© 2025 CSSpedia</p>
+  </footer>
+</body>
+</html>

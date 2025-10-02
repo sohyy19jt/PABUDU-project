@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSSpedia - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar ">
+      <div class="logo">CSS PEDIA</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="tutorial.html">Tutorial</a></li>
+        <li><a href="playground.html">Playground</a></li>
+        <li><a href="damn.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Pengenalan CSS Ala Gen Z!</h1>
+    <p>BY PABUDU project</p>
+  </section>
+
+  <!-- Portfolio -->
+  <section class="portfolio" id="portfolio">
+    <div class="box">
+      <ul>
+      <li><a href="#" onclick="tampilkanKonten('apaItuCSS')">Apa itu CSS?</a></li>
+      <li><a href="#" onclick="tampilkanKonten('sejarahCSS')">Sejarah CSS</a></li>
+      <li><a href="#" onclick="tampilkanKonten('penggunaanCSS')">Penggunaan CSS</a></li>
+      <li><a href="#" onclick="tampilkanKonten('jenisCSS')">Jenis-Jenis CSS</a></li>
+      <li><a href="#" onclick="tampilkanKonten('manfaatCSS')">Manfaat Penguasaan CSS</a></li>
+      <li><a href="#" onclick="tampilkanKonten('penutup')">Penutup</a></li>
+      </ul>
+    </div>
+
+
+    <div class="box" id="kontenKanan">
+       <h3>Selamat datang di CSS Pedia!</h3>
+    <p>Klik salah satu topik di kiri untuk melihat penjelasan di sini 👈</p>
+    </div>
+  </section>
+
+  <!-- Subscribe -->
+  <section class="subscribe">
+  <h2>📩 Kirimkan Kami Masukan</h2>
+  <p>Tanya apa saja tentang website kami ataupun berikan kami masukan</p>
+  <form action="https://formspree.io/f/mldpnjen" method="POST">
+  <input type="email" name="email" placeholder="Masukkan email kamu..." required>
+  <textarea name="pesan" placeholder="Tulis pesanmu..." required></textarea>
+  <button type="submit">Kirim</button>
+</form>
+
+  <!-- <p class="contact-link">
+    Atau ingin ngobrol langsung? <a href="contact.html">Hubungi Saya</a>
+  </p> -->
+
+  <div id="popup" class="popup">
+    <div class="popup-content">
+      <h2>🎉 Terima Kasih!</h2>
+      <p>Email kamu sudah berhasil didaftarkan.</p>
+      <button onclick="closePopup()">Tutup</button>
+    </div>
+</div>
+
+</section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 PABUDU project</p>
+    <!-- <div class="footer-links">
+      <a href="#">Contact</a>
+      <a href="#">Instagram</a>
+      <a href="#">GitHub</a>
+      <a href="#">LinkedIn</a>
+    </div> -->
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

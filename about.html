@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us - Kelompok</title>
+  <style>
+    /* Reset dasar */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #2c3e50, #34495e);
+      color: white;
+    }
+
+    /* Navbar */
+    nav {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #f1c40f;
+    }
+
+    /* About Header */
+    .about-header {
+      text-align: center;
+      margin-top: 100px;
+      margin-bottom: 40px;
+    }
+    .about-header h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* Struktur Organisasi */
+    .org-structure {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+      padding: 20px;
+    }
+
+    /* Level */
+    .level {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    /* Card Anggota */
+    .member {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      width: 200px;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    .member:hover {
+      transform: translateY(-8px) scale(1.05);
+      background: rgba(255,255,255,0.2);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+
+    /* Foto Profil */
+    .member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #f1c40f;
+      margin-bottom: 15px;
+      object-fit: cover;
+      transition: 0.3s;
+    }
+    .member:hover img {
+      border-color: #e67e22;
+      transform: rotate(-3deg) scale(1.05);
+    }
+
+    .member h3 {
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+    .member p {
+      font-size: 14px;
+      color: #f1c40f;
+    }
+
+    /* Ketua Highlight */
+    .highlight {
+      border: 2px solid #f1c40f;
+      background: rgba(241, 196, 15, 0.15);
+    }
+
+    /* Reveal effect */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="tutorial.html">Tutorial</a></li>
+      <li><a href="playground.html">Playground</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Judul -->
+  <section class="about-header">
+    <h1>Struktur Perangkat Kelompok</h1>
+    <p>Berikut adalah anggota kelompok kami:</p>
+  </section>
+
+  <!-- Struktur Organisasi -->
+  <section class="org-structure">
+    <!-- Ketua -->
+    <div class="level ketua reveal">
+      <div class="member highlight">
+        <img src="abdul.jpg" alt="Ketua">
+        <h3>Nama Ketua</h3>
+        <p>Ketua Kelompok</p>
+      </div>
+    </div>
+
+    <!-- Wakil -->
+    <div class="level wakil reveal">
+      <div class="member">
+        <img src="syamsi.jpg" alt="Wakil">
+        <h3>Nama Wakil</h3>
+        <p>Wakil Ketua</p>
+      </div>
+    </div>
+
+    <!-- Sekretaris & Bendahara -->
+    <div class="level duo reveal">
+      <div class="member">
+        <img src="chaira.jpg" alt="Sekretaris">
+        <h3>Nama Sekretaris</h3>
+        <p>Sekretaris</p>
+      </div>
+      <div class="member">
+        <img src="sahfina.jpg" alt="Bendahara">
+        <h3>Nama Bendahara</h3>
+        <p>Bendahara</p>
+      </div>
+    </div>
+
+    <!-- Anggota -->
+    <div class="level anggota reveal">
+      <div class="member">
+        <img src="fikri.jpg" alt="Anggota 1">
+        <h3>Nama Anggota 1</h3>
+        <p>Anggota</p>
+      </div>
+      <div class="member">
+        <img src="dinda.jpg" alt="Anggota 2">
+        <h3>Nama Anggota 2</h3>
+        <p>Anggota</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Reveal animation saat discroll
+    window.addEventListener("scroll", function() {
+      const reveals = document.querySelectorAll(".reveal");
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        const elementVisible = 100;
+        if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+        }
+      }
+    });
+  </script>
+</body>
+</html>

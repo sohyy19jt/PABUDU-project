@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Layout - CSSpedia</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">CSSpedia</div>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../tutorial.html">Tutorial</a></li>
+        <!-- <li><a href="../index.html#playground">Playground</a></li>
+        <li><a href="../index.html#about">About</a></li> -->
+      </ul>
+    </nav>
+  </header>
+
+  <section class="portfolio-page">
+  <h1>Grid Layout</h1>
+  <p>
+    Grid Layout memudahkan dalam membuat tata letak dua dimensi (baris dan kolom).
+  </p>
+  <h2>Contoh Grid:</h2>
+  <pre>
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.box {
+  background: lightseagreen;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+  </pre>
+
+  <h2>Hasil:</h2>
+  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px;">
+    <div style="background:lightseagreen; color:white; padding:20px; text-align:center;">Box 1</div>
+    <div style="background:lightseagreen; color:white; padding:20px; text-align:center;">Box 2</div>
+    <div style="background:lightseagreen; color:white; padding:20px; text-align:center;">Box 3</div>
+  </div>
+</section>
+
+
+  <footer>
+    <p>© 2025 CSSpedia</p>
+  </footer>
+</body>
+</html>

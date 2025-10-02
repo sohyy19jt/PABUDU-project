@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS PEDIA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 50px;
+      background: white;
+      border-bottom: 1px solid #ddd;
+    }
+    header h1 {
+      font-size: 22px;
+      border: 2px solid black;
+      padding: 5px 15px;
+      border-radius: 10px;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+nav a {
+  position: relative;
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  transition: 0.3s;
+}
+nav a:hover {
+  color: #f1c40f;
+}
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #f1c40f;
+  transition: width 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+
+.intro-box {
+  text-align: center;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 15px;
+  padding: 20px 30px;
+  margin: 20px auto;
+  max-width: 800px;  /* biar gak kepanjangan */
+}
+
+.intro-box h1 {
+  margin-top: 0;
+  font-size: 28px;
+}
+
+.intro-box p {
+  margin: 10px 0 0;
+  font-size: 16px;
+}
+
+
+    /* Grid */
+  .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+
+
+
+/* Card simple */
+.card {
+  background: #fff;
+  width: 220px;
+  height: 350px;       /* jadi lebih tinggi */
+  border: 2px solid #000;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  overflow: hidden;
+  position: relative;
+  order: 2;
+}
+
+/* Foto di mode simple */
+.profile img {
+  width: 120px;
+  height: 160px;       /* lebih tinggi → oval */
+  border-radius: 50% / 35%;  /* bikin oval */
+  object-fit: cover;
+  margin-bottom: 15px;
+  transition: all 0.5s ease;
+}
+
+/* Saat expanded */
+.card.expanded {
+  width: 95%;
+  max-width: 1200px;
+  height: auto;         /* biar mengikuti konten */
+  display: flex;
+  padding: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  order: 1;
+}
+
+.card.expanded .profile {
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+  border-right: 2px solid #000;
+  background: #fff;
+}
+
+.card.expanded .profile img {
+  width: 180px;
+  height: 220px;       /* oval lebih besar */
+  border-radius: 50% / 35%;
+  margin-bottom: 10px;
+}
+
+
+    /* Details panel (hidden by default) */
+    .details {
+      display: none;
+      flex: 1;
+      background: #ccc;
+      padding: 20px 30px;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: all 0.5s ease;
+    }
+
+    /* Details saat card expanded */
+    .card.expanded .details {
+      display: block;
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .details h2 {
+      margin-top: 0;
+    }
+
+    /* Info tambahan hanya muncul di expanded */
+    .extra-info {
+      display: none;
+      transition: all 0.5s ease;
+    }
+
+    .card.expanded .extra-info {
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CSSpedia</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <!-- <a href="tutorial.html">Tutorial</a> -->
+      <!-- <a href="playground.html">Playground</a> -->
+    </nav>
+  </header>
+
+  <div class="intro-box">
+    <h1>Tentang Kami</h1>
+    <p>Kami PABUDU project tergabung menjadi satu kelompok tanpa sengaja tetapi tetap solid bersama, Kami membuat website ini agar para pengunjung dapat mempelajari CSS dengan mudah dan menyenangkan</p>
+  </div>
+
+  <div class="container">
+    <!-- Card 1 -->
+    <div class="card">
+      <div class="profile">
+        <img src="abdul.jpg" alt="foto">
+        <div class="simple-info">
+          <h3>ABDUL MAJID</h3>
+          <p>Ketua</p>
+        </div>
+        <div class="extra-info">
+          <p><b>Social Media:</b><br><a href="https://www.instagram.com/ad_ulm/">@ad_ulm</a></p>
+          <p><b>Tanggal Lahir:</b><br>13-07-2009</p>
+        </div>
+      </div>
+      <div class="details">
+        <h2>Tentang Saya</h2>
+        <p>Haloooo saya murid dari SMK N1 PST, saya sedang duduk di kelas 11 RPL 2 hobi saya adalah bermain game, nonton anime dan kegiatan malas malasan lainnya</p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+      <div class="profile">
+        <img src="syamsi.jpg" alt="foto">
+        <div class="simple-info">
+          <h3>Syamsi Al-Fajar</h3>
+          <p>Wakil Ketua</p>
+        </div>
+        <div class="extra-info">
+          <p><b>Social Media:</b><br><a href="https://www.instagram.com/aljr_syi/">@aljr_syi</a></p>
+          <p><b>Tanggal Lahir:</b><br>10-02-2010 -1</p>
+        </div>
+      </div>
+      <div class="details">
+        <h2>Tentang Saya</h2>
+        <p>Jangan takut gagal, karena kegagalan hanyalah batu loncatan menuju keberhasilan</p>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+      <div class="profile">
+        <img src="chaira.jpg" alt="foto">
+        <div class="simple-info">
+          <h3>Chaira Wardhani Lubis</h3>
+          <p>Sekretaris</p>
+        </div>
+        <div class="extra-info">
+          <p><b>Social Media:</b><br><a href="https://www.instagram.com/chairawrdhlbs/">@chairawrdhlbs</a></p>
+          <p><b>Tanggal Lahir:</b><br>23-11-2009</p>
+        </div>
+      </div>
+      <div class="details">
+        <h2>Tentang Saya</h2>
+        <p>hyunwook pacar aira</p>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+      <div class="profile">
+        <img src="sahfina.jpg" alt="foto">
+        <div class="simple-info">
+          <h3>Sahfina Aufa</h3>
+          <p>Bendahara</p>
+        </div>
+        <div class="extra-info">
+          <p><b>Social Media:</b><br><a href="https://www.instagram.com/shfna.faa/">@shfna.faa</a></p>
+          <p><b>Tanggal Lahir:</b><br>29-09-2009</p>
+        </div>
+      </div>
+      <div class="details">
+        <h2>Tentang Saya</h2>
+        <p>suka sim jaeyun</p>
+      </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+      <div class="profile">
+        <img src="fikri.jpg" alt="foto">
+        <div class="simple-info">
+          <h3>Fiqri Arshavin</h3>
+          <p>Anggota</p>
+        </div>
+        <div class="extra-info">
+          <p><b>Social Media:</b><br><a href="https://www.instagram.com/endycold/">@endycold</a></p>
+          <p><b>Tanggal Lahir:</b><br>06-02-1983</p>
+        </div>
+      </div>
+      <div class="details">
+        <h2>Tentang Saya</h2>
+        <p> 𝐈 𝐚𝐥𝐰𝐚𝐲𝐬 𝐜𝐨𝐦𝐞𝐛𝐚𝐜𝐤🐰🔪</p>
+      </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card">
+      <div class="profile">
+        <img src="dinda.jpg" alt="foto">
+        <div class="simple-info">
+          <h3>Dinda Cintya Ningsih</h3>
+          <p>Anggota</p>
+        </div>
+        <div class="extra-info">
+          <p><b>Social Media:</b><br><a href="https://www.instagram.com/stcxlightt/">@stcxlightt</a></p>
+          <p><b>Tanggal Lahir:</b><br>27-07-2009</p>
+        </div>
+      </div>
+      <div class="details">
+        <h2>Tentang Saya</h2>
+        <p> sk ikn</p>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    const cards = document.querySelectorAll(".card");
+
+    cards.forEach(card => {
+      card.addEventListener("click", () => {
+        // toggle jika card sama diklik lagi
+        if (card.classList.contains("expanded")) {
+          card.classList.remove("expanded");
+          return;
+        }
+
+        // tutup semua card lain
+        cards.forEach(c => c.classList.remove("expanded"));
+
+        // buka card yang diklik
+        card.classList.add("expanded");
+
+        // pindah ke paling depan (order 1)
+        cards.forEach(c => c.style.order = "2");
+        card.style.order = "1";
+      });
+    });
+  </script>
+</body>
+</html>
