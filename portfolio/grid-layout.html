@@ -8,16 +8,16 @@
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <div class="logo">CSSpedia</div>
-      <ul class="nav-links">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../tutorial.html">Tutorial</a></li>
-        <!-- <li><a href="../index.html#playground">Playground</a></li>
-        <li><a href="../index.html#about">About</a></li> -->
-      </ul>
-    </nav>
-  </header>
+  <nav class="navbar">
+    <div class="logo">CSS PEDIA</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../tutorial.html">Tutorial</a></li>
+    </ul>
+    <!-- Tombol hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </nav>
+</header>
 
   <section class="portfolio-page">
   <h1>Grid Layout</h1>
@@ -51,5 +51,11 @@
   <footer>
     <p>© 2025 CSSpedia</p>
   </footer>
+
+  <script> 
+   function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+</script>
 </body>
 </html>
